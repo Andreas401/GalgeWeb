@@ -40,6 +40,7 @@
             Service service = Service.create(url, qname);
             MainInterface i = service.getPort(MainInterface.class);
 
+
            
 
             //i.gætBogstav("b");
@@ -79,7 +80,7 @@
                  <% System.out.println("synligt ord: " + i.getSynligtOrd()); %>
             </div>
 
-            <form method="GET" action="newjsp.jsp">
+            <form method="GET" action="">
                 <input name="usermsg" type="string"/>
                 <input type="submit" value="Submit"/>
             </form>
