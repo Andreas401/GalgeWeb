@@ -16,15 +16,31 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Galgeleg</title>
+          <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+          <script type="text/javascript">
+            $('document').ready(function(){
+                
+                $('#usermsg').click(function(){
+                    bogstavprompt = prompt("Gæt et bogstav");
+                    document.getElementById("usermsg").value = bogstavprompt;
+                    
+                })
+                
+                
+            })
+            </script>-->
+
     </head>
     <body>
 
         <%
+            
             URL url = new URL("http://ubuntu4.javabog.dk:9978/galgeleg?wsdl");
             QName qname = new QName("http://server/", "GameLogicService");
             Service service = Service.create(url, qname);
             MainInterface i = service.getPort(MainInterface.class);
-            i.nulstil();
+
+           
 
             //i.gætBogstav("b");
             
@@ -52,13 +68,22 @@
                 <p class="welcome">Galgeleg Spil, <b></b></p>
             </div>
 
-            <div id="chatbox"> <% out.println("" + i.getSynligtOrd()); String submit = request.getParameter("submitmsg"); i.gætBogstav(submit); %></div>
+            <div id="chatbox">   
+                 <% String submit = request.getParameter("usermsg"); %>
+                 <% out.println(submit); %>
+                 
+                 <% if(request.getParameter("usermsg")==null){} else{i.gætBogstav(submit);} %>
+                 <%out.println(i.getSynligtOrd()); %>
+                 <% i.getBrugteBogstaver(); %>
+                 <% i.logStatus(); %>
+                 <% System.out.println("synligt ord: " + i.getSynligtOrd()); %>
+            </div>
 
-            <form name="message" action="">
-                <input name="usermsg" type="text" id="usermsg" size="63" />
-                <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
+            <form method="GET" action="newjsp.jsp">
+                <input name="usermsg" type="string"/>
+                <input type="submit" value="Submit"/>
             </form>
-
+           <% if(i.erSpilletSlut()){i.nulstil();} %>
         </div>   
     </body>
 </html>
