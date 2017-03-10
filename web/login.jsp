@@ -9,16 +9,17 @@
 <%@page import="javax.xml.ws.Service"%>
 <%@page import="javax.xml.namespace.QName"%>
 <%@page import="java.net.URL"%>
+<link type="text/css" rel="stylesheet" href="css.css" />
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Login</title>
         <script type="text/javascript">
             function Redirectnewjsp(){
                 
-                window.location="newjsp.jsp";
+                window.location="GalgelegWeb.jsp";
                 
             }
             
@@ -31,7 +32,7 @@
             </script>
     </head>
     <body>
-         <%String link1 = "newjsp.jsp";
+         <%String link1 = "GalgelehWeb.jsp";
              String link2 = "";%>
         
       <!--    
@@ -54,10 +55,10 @@
             
         -->
 
-         <form method="GET" action="loginprocess.jsp">
-                <input name="username" type="text" value="null"/>
-                <input name="password" type="text"/>
-                <input type="submit" value="Submit"/>
+         <form class="login-form" method="GET" action="loginprocess.jsp">
+             <input name="username" type="text" placeholder="Brugernavn"/><br>
+             <input name="password" type="password" placeholder="Adgangskode"/><br>
+             <button type="submit">Login</button>
         </form>
     </body>
 </html>
