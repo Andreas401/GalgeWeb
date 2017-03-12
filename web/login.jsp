@@ -34,26 +34,6 @@
     <body>
          <%String link1 = "GalgelehWeb.jsp";
              String link2 = "";%>
-        
-      <!--    
-            
-            if(request.getParameter("username")!= null){
-               
-                URL url = new URL("http://javabog.dk:9901/brugeradmin?wsdl");
-		QName qname = new QName("http://soap.transport.brugerautorisation/", "BrugeradminImplService");
-		Service service = Service.create(url, qname);
-		Brugeradmin ba = service.getPort(Brugeradmin.class);
-                Bruger q = ba.hentBruger(request.getParameter("username"), request.getParameter("password"));
-
-                out.print(q);
-                if(q!=null){
-                    link2 = link1;
-                }
-                else{link2="";}
-            }
-
-            
-        -->
 
          <form class="login-form" method="GET" action="loginprocess.jsp">
              <input name="username" type="text" placeholder="Brugernavn"/><br>

@@ -15,24 +15,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Galgeleg</title>
-
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-        <script type="text/javascript">
-          $('document').ready(function(){
-              
-              $('#usermsg').click(function(){
-                  bogstavprompt = prompt("Gæt et bogstav");
-                  document.getElementById("usermsg").value = bogstavprompt;
-                  
-              })
-              
-              
-          })
-          </script>-->
-
     </head>
     <body>
-        
+
         <%
             URL url = new URL("http://ubuntu4.javabog.dk:9978/galgeleg?wsdl");
             QName qname = new QName("http://server/", "GameLogicService");
@@ -66,7 +51,7 @@
             </div>
 
             <form method="GET" action="">
-                <input name="usermsg" type="string" style="width:385px; padding:10px; margin-left: 4.5%"/>
+                <input name="usermsg" type="string" style="width:385px; padding:10px; margin-left: 4.5%" autofocus/>
                 <input type="submit" value="Submit" style="padding: 10px"/>
             </form>
             <% if (i.erSpilletSlut()) {
