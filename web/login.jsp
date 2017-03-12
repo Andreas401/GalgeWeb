@@ -17,28 +17,28 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
         <script type="text/javascript">
-            function Redirectnewjsp(){
-                
-                window.location="GalgelegWeb.jsp";
-                
+            function Redirectnewjsp() {
+
+                window.location = "GalgelegWeb.jsp";
+
             }
-            
-            function Redirectlogin(){
-                
-                window.location="login.jsp";
-                
+
+            function Redirectlogin() {
+
+                window.location = "login.jsp";
+
             }
-            
-            </script>
+
+        </script>
     </head>
     <body>
-         <%String link1 = "GalgelehWeb.jsp";
-             String link2 = "";%>
+        <%String link1 = "GalgelehWeb.jsp";
+            String link2 = "";%>
 
-         <form class="login-form" method="GET" action="loginprocess.jsp">
-             <input name="username" type="text" placeholder="Brugernavn"/><br>
-             <input name="password" type="password" placeholder="Adgangskode"/><br>
-             <button type="submit">Login</button>
+        <form class="login-form" method="GET" action="loginprocess.jsp">
+            <input name="username" type="text" placeholder="Brugernavn"/><br>
+            <input name="password" type="password" placeholder="Adgangskode"/><br>
+            <button type="submit">Login</button>
         </form>
     </body>
 </html>
