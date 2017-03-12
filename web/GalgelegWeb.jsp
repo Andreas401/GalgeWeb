@@ -51,7 +51,7 @@
                 <br><br><br>
                 <% if (request.getParameter("usermsg") == null) {
                     } else {
-                        i.gætBogstav(submit);
+                        i.gætBogstav(submit.toLowerCase());
                     } %>
                 <% out.println(i.getSynligtOrd()); %>
                 <% i.getBrugteBogstaver(); %>
