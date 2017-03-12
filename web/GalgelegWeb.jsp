@@ -1,5 +1,5 @@
 <%-- 
-    Document   : newjsp
+    Document   : GalgelegWeb
     Created on : 07-03-2017, 13:00:41
     Author     : JJ
 --%>
