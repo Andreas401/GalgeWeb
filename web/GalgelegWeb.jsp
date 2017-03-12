@@ -34,6 +34,7 @@
                 <br><br>
                 <% out.println("Dit gæt: " + submit); %>
                 <br><br><br>
+                <% out.println("Ordet: "); %>
                 <% if (request.getParameter("usermsg") == null) {
                     } else {
                         i.gætBogstav(submit.toLowerCase());
